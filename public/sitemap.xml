@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <url>
+
+      <loc>http://www.ma-target.fr/</loc>
+
+      <lastmod>2021-04-22</lastmod>
+
+      <changefreq>never</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.ma-target.fr/reserver/</loc>
+
+      <lastmod>2021-04-22</lastmod>
+
+      <changefreq>always</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.ma-target.fr/entreprise/</loc>
+
+      <lastmod>2021-04-22</lastmod>
+
+      <changefreq>never</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.ma-target.fr/cgv</loc>
+
+      <lastmod>2021-04-22</lastmod>
+
+      <changefreq>never</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.ma-target.fr/drink/</loc>
+
+      <lastmod>2021-04-22</lastmod>
+
+      <changefreq>never</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>http://www.ma-target.fr/food/</loc>
+
+      <lastmod>2021-04-22</lastmod>
+
+      <changefreq>never</changefreq>
+
+   </url>
+</urlset>

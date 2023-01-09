@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ma Target</title>
+	<link rel="stylesheet" href="../fonts.css" type="text/css" charset="utf-8" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Mono&family=Teko:wght@300&family=Vidaloka&family=Yellowtail&family=PT+Sans+Caption&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../img/matargetLogo.png" sizes="32x32">
+
+
+</head>
+
+    <body>
+
+                          <div id="quitterPage" onclick="location.href='../';" >
+                            <div class="cross">
+                                <button class="cross2">
+                                  <div class="crossR"></div>
+                                  <div class="crossL"></div>
+                                </button>
+                            </div>
+                          </div>
+
+
+
+
+
+
+                    <div id="menuClient">
+                      <div class="qrcode">
+                        <div class="qrcode2">
+                          <img src="../img/1.png" class="responsiveQRCode">
+                          <img src="../img/1b.png" class="responsiveQRCode">
+                          <img src="../img/2b.png" class="responsiveQRCode">
+                        </div>
+                      </div>
+                    </div>
+
+
+
+    <script type="text/javascript" src="../js/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+<!-- <script>
+    $(document).ready(function() {
+ 
+    setTimeout(function(){
+        $('body').addClass('loaded');
+    }, 500);
+ 
+});
+</script> -->
+
+<script>
+           ;(function(){
+             function id(v){ return document.getElementById(v); }
+             function loadbar() {
+               var ovrl = id("overlay"),
+                   prog = id("progress"),
+                   stat = id("progstat"),
+                   img = document.images,
+                   c = 0,
+                   tot = img.length;
+               if(tot == 0) return doneLoading();
+
+               function imgLoaded(){
+                 c += 1;
+                 var perc = ((100/tot*c) << 0) +"%";
+                 prog.style.width = perc;
+                 stat.innerHTML = perc;
+                 if(c===tot) return doneLoading();
+               }
+               function doneLoading(){
+                 setTimeout(function(){ 
+                   ovrl.style.display = "none";
+                   $('body').addClass('loaded');
+                 }, 1200);
+               }
+               for(var i=0; i<tot; i++) {
+                 var tImg     = new Image();
+                 tImg.onload  = imgLoaded;
+                 tImg.onerror = imgLoaded;
+                 tImg.src     = img[i].src;
+               }    
+             }
+             document.addEventListener('DOMContentLoaded', loadbar, false);
+           }());
+       </script>
+
+
+
+    <script>
+      AOS.init();
+    </script>
+
+    </body>
+</html>
