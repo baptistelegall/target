@@ -1,0 +1,22 @@
+Jan  5 17:36:41 10.71.57.0 tmp104098992-7553 Connection from 10.71.57.0 port 21276 on 82.165.88.20 port 22
+Jan  5 17:36:41 10.71.57.0 tmp104098992-7553 Accepted password for tmp104098992-7553 from 10.71.57.0 port 21276 ssh2
+Jan  5 17:36:41 10.71.57.0 tmp104098992-7553 Starting session: subsystem 'sftp' for tmp104098992-7553 from 10.71.57.0 port 21276 id 0
+Jan  5 17:36:41 10.71.57.0 tmp104098992-7553 session opened for local user tmp104098992-7553 from [10.71.57.0]
+Jan  5 17:38:11 10.71.57.0 tmp104098992-9882 Connection from 10.71.57.0 port 21882 on 82.165.88.20 port 22
+Jan  5 17:38:11 10.71.57.0 tmp104098992-9882 Accepted password for tmp104098992-9882 from 10.71.57.0 port 21882 ssh2
+Jan  5 17:38:55 10.71.57.0 tmp104098992-7553 open "/.zip" flags READ mode 0666
+Jan  5 17:38:56 10.71.57.0 tmp104098992-7553 close "/.zip" bytes read 38993938 written 0
+Jan  5 17:38:56 10.71.57.0 tmp104098992-7553 [10.71.57.0|get|1|38993938|0|0|0|2f2e7a6970|]
+Jan  5 17:39:53 10.71.57.0 u104098992 Connection from 10.71.57.0 port 51488 on 82.165.88.20 port 22
+Jan  5 17:39:55 10.71.57.0 u104098992 Failed publickey for u104098992 from 10.71.57.0 port 51488 ssh2: RSA SHA256:OcHioG8hC/jpCvzF+jDST97vug1H9IG3t0Zroge97zo
+Jan  5 17:40:06 10.71.57.0 u104098992 Accepted password for u104098992 from 10.71.57.0 port 51488 ssh2
+Jan  5 18:06:38 10.71.57.0 u104098992 Connection closed by 10.71.57.0 port 51488
+Jan  5 18:53:25 10.71.57.0 tmp104098992-7553 session closed for local user tmp104098992-7553 from [10.71.57.0]
+Jan  5 18:53:25 10.71.57.0 tmp104098992-7553 Connection closed by 10.71.57.0 port 21276
+Jan  5 18:53:25 10.71.57.0 tmp104098992-9882 Connection closed by 10.71.57.0 port 21882
+Jan  8 19:50:59 10.71.57.0 tmp104098992-6989 Connection from 10.71.57.0 port 10062 on 82.165.88.20 port 22
+Jan  8 19:50:59 10.71.57.0 tmp104098992-6989 Accepted password for tmp104098992-6989 from 10.71.57.0 port 10062 ssh2
+Jan  8 19:50:59 10.71.57.0 tmp104098992-6989 Starting session: subsystem 'sftp' for tmp104098992-6989 from 10.71.57.0 port 10062 id 0
+Jan  8 19:50:59 10.71.57.0 tmp104098992-6989 session opened for local user tmp104098992-6989 from [10.71.57.0]
+Jan  8 19:51:19 10.71.57.0 tmp104098992-145 Connection from 10.71.57.0 port 10176 on 82.165.88.20 port 22
+Jan  8 19:51:19 10.71.57.0 tmp104098992-145 Accepted password for tmp104098992-145 from 10.71.57.0 port 10176 ssh2
