@@ -2,10 +2,10 @@
 image: php
 # Functions that should be executed before the build script is run
 before_script:
-  - echo "toto
+  - echo "toto"
 pages:
   script:
-    - echo "toto
+    - echo "toto"
   artifacts:
     paths:
       # The folder that contains the files to be exposed at the Page URL
