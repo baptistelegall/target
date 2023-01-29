@@ -73,15 +73,16 @@ p {
     min-width: 100px;
 }
 .btn-close {
-    color: #aaaaaa;
+    color: #0e2247;
     font-size: 30px;
     text-decoration: none;
     position: absolute;
     right: 5px;
     top: 0;
+
 }
 .btn-close:hover {
-    color: #919191;
+    color: #f3cf12;
 }
 .modal:target:before {
     display: none;
@@ -146,6 +147,9 @@ p {
     text-align: right;
 }
 
+.list-item:hover {
+    color: #f3cf12
+}
 /*
     MODAL END
 */
