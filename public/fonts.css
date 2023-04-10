@@ -3242,6 +3242,16 @@ text-transform: uppercase;
 
 	position: absolute;
 }
+#location1 {
+
+	position: absolute;
+}
+
+#location2 {
+	visibility: hidden;
+
+	position: absolute;
+}
 
 .imageEntreprise {
 	width: 100%;

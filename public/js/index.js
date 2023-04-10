@@ -26,7 +26,15 @@ $(document).ready(function() {
       $("#insta2" ).css({"visibility":"hidden"});
     }
   );
-
+    $( "#location" ).hover(
+    function() {
+      $( "#location1" ).css({"visibility":"hidden"});
+      $("#location2" ).css({"visibility":"visible"});
+    }, function() {
+      $("#location1").css({"visibility":"visible"});
+      $("#location2" ).css({"visibility":"hidden"});
+    }
+  );
  $("#link1").click(function() {
     $('.popup').animate({width:'0'},350);
 	    $('#menu2').css({"display":"flex"});
