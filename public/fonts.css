@@ -11,7 +11,7 @@
   margin: 0;
 	padding: 0px 0 0px 40px;
 	list-style: none;
-	background-image: url('img/raison4.png');
+	background-image: url('img/commun/raison4.png');
 	background-repeat: no-repeat;
 	background-position: left center;
 	background-size: 40px;
@@ -73,15 +73,16 @@ p {
     min-width: 100px;
 }
 .btn-close {
-    color: #aaaaaa;
+    color: #0e2247;
     font-size: 30px;
     text-decoration: none;
     position: absolute;
     right: 5px;
     top: 0;
+
 }
 .btn-close:hover {
-    color: #919191;
+    color: #f3cf12;
 }
 .modal:target:before {
     display: none;
@@ -89,7 +90,7 @@ p {
 .modal:before {
     content:"";
     display: block;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.3);
     position: fixed;
     top: 0;
     left: 0;
@@ -101,11 +102,11 @@ p {
     background: #fefefe;
     border: #f3cf12 solid 3px;
     border-radius: 5px;
-    margin-left: -180px;
+    margin-left: -140px;
     position: fixed;
     left: 50%;
     z-index: 11;
-    width: 350px;
+    width: 280px;
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
@@ -113,7 +114,7 @@ p {
     -moz-transition: -moz-transform 0.3s ease-out;
     -o-transition: -o-transform 0.3s ease-out;
     transition: transform 0.3s ease-out;
-    top: 30%;
+    top: 35%;
     font-family: 'Teko', sans-serif;
 	  font-weight: 400;
     color: #0e2247;
@@ -146,6 +147,9 @@ p {
     text-align: right;
 }
 
+.list-item:hover {
+    color: #f3cf12
+}
 /*
     MODAL END
 */
@@ -771,7 +775,7 @@ text-transform: uppercase;
 	justify-content: center;
 	align-items: center;
 	align-content: center;
-	background-image: url(img/fondMenu.png);
+	background-image: url(img/commun/fondMenu.png);
   	background-position: cover;
   	background-size: 100%;
 }
@@ -783,7 +787,7 @@ text-transform: uppercase;
 	justify-content: center;
 	align-items: flex-start;
 	align-content: flex-start;
-	background-image: url(img/fondMatarget.png);
+	background-image: url(img/commun/fondMatarget.png);
   	background-position: cover;
   	background-size: 100%;
 }
@@ -947,7 +951,7 @@ font-weight: 800;
   justify-content: center;
   align-items: center;
   align-content: center;
-  background-image: url(img/fondMatarget.png);
+  background-image: url(img/commun/fondMatarget.png);
     background-position: cover;
     background-size: 100%;
 }
@@ -2120,7 +2124,7 @@ font-family: 'Yellowtail', cursive;
   	align-content: center;
   	align-items: center;
   	flex-wrap: wrap;
-  	background-image: url(img/fondMatarget.png);
+  	background-image: url(img/commun/fondMatarget.png);
   	background-position: cover;
   	background-size: 100%;
 }
@@ -2128,7 +2132,7 @@ font-family: 'Yellowtail', cursive;
 @media all and (max-width: 800px) {
  #videoFond {
 
-  	background-image: url(img/fondMatarget.png);
+  	background-image: url(img/commun/fondMatarget.png);
   	background-position: cover;
   	background-size: 150%;
 }

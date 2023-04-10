@@ -1,555 +1,93 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bienvenue chez Ma-Target, le nouveau bar à concept alliant fléchettes et street food à Brest ! Passez un bon moment entre amis et/ou collègues dans une ambiance conviviale autour de la fléchette. Boissons, streetfood, retransmission de matchs sportifs, Ma Target est le lieu idéal pour vos afterworks ou même séminaires ! Ouverture prochaine restez connectés..." />
-  <meta name="keywords" content="activité, activités, café, bar, brasserie, restaurant, salon, thé, traiteur, salle, louer, jeux, jeu, organisation, de, séminaires, séminaire, séminaires, team, building, vente , sur, place, à, emporter, boissons, alcoolisées, non, alcoolisé, alcool, sans alcool, boisson, manger, boire, fléchettes, flechettes, flechette, fléchette, brest, fun, bon, moments, afterwork" />
-  <meta name="author" content="axldesign" />
-	<title>Ma Target - Le nouveau concept bar à fléchettes 100% Brestois !</title>
-	<link rel="stylesheet" href="fonts.css" type="text/css" charset="utf-8" />
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Mono&family=Teko:wght@300&family=Vidaloka&family=Yellowtail&family=PT+Sans+Caption&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-  <link rel="icon" type="image/png" href="./img/matargetLogo.png" sizes="32x32">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Bienvenue chez Ma-Target, le nouveau bar à concept alliant fléchettes et street food !"/>
+    <meta name="keywords"
+          content="activité, activités, café, bar, brasserie, restaurant, salon, thé, traiteur, salle, louer, jeux, jeu, organisation, de, séminaires, séminaire, séminaires, team, building, vente , sur, place, à, emporter, boissons, alcoolisées, non, alcoolisé, alcool, sans alcool, boisson, manger, boire, fléchettes, flechettes, flechette, fléchette, brest, fun, bon, moments, afterwork"/>
+    <title>Ma Target - Le nouveau concept bar fléchettes !</title>
+    <link rel="stylesheet" href="public/fonts.css" type="text/css" charset="utf-8"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Mono&family=Teko:wght@300&family=Vidaloka&family=Yellowtail&family=PT+Sans+Caption&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="icon" type="image/png" href="./public/img/commun/matargetLogo.png" sizes="32x32">
 
 </head>
 
-    <body onload="">
-        <div id="loader-wrapper">
+<body onload="">
+<div id="loader-wrapper">
 
-            <div id="loader">
-                <div class="spineur1"></div>
-                <div class="spineur2"></div>
-                <div class="spineur3"></div>
-                <div id="overlay">
-                   <div id="progstat"></div>
-                   <div id="progress"></div>
-                </div>
-            </div>
-            <div class="loader-section section-top"></div>
-            <div class="loader-section2 section-top2"></div>
- 
+    <div id="loader">
+        <div class="spineur1"></div>
+        <div class="spineur2"></div>
+        <div class="spineur3"></div>
+        <div id="overlay">
+            <div id="progstat"></div>
+            <div id="progress"></div>
         </div>
+    </div>
+    <div class="loader-section section-top"></div>
+    <div class="loader-section2 section-top2"></div>
+
+</div>
 <!-- Modal -->
 <div class="modal" id="stay" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-header">
-             <h2>Quel bar souhaitez-vous séléctionner ?</h2>
- <a href="#stay" class="btn-close" aria-hidden="true">x</a>
-
+            <h2>Quel bar souhaitez-vous séléctionner ?</h2>
+<!--
+            <a href="#stay" class="btn-close" aria-hidden="true">x</a>
+-->
         </div>
         <div class="modal-body">
             <ul role="list">
-                <a style="color: inherit;" href="https://brest.ma-target.fr"><li class="list-item">Brest</li></a>
-                <a style="color: inherit;" href="https://lorient.ma-target.fr"><li class="list-item">Lorient</li></a>
+                <a style="color: inherit;" href="./brest/">
+                    <li class="list-item">Brest</li>
+                </a>
+                <a style="color: inherit;" href="./lorient/">
+                    <li class="list-item">Lorient</li>
+                </a>
             </ul>
         </div>
-        <div class="modal-footer"> <a href="#stay" class="btn">Continuer sur le site principal</a>
 
-        </div>
     </div>
+</div>
 </div>
 
 
-                <div id="socialMedia">
-                  <div class="socialMediaAnimation">
-                  <a href=""><button class="socialMedia" id="facebook"><img src="img/locate.png" width="35px" id="fb1"><img src="img/locate.png" width="35px" id="fb2"></button></a>
-                  <a href="https://www.facebook.com/Ma-Target-102186641947104"><button class="socialMedia" id="facebook"><img src="img/facebook.png" width="35px" id="fb1"><img src="img/fb.png" width="35px" id="fb2"></button></a>
-                  <a href="https://www.instagram.com/ma.target/?hl=fr"><button class="socialMedia" id="instagram"><img src="img/instagram.png" width="35px" id="insta1"><img src="img/insta.png" width="45px" id="insta2"></button></a>
-                  </div>
-                </div>
 
-                <div id="navPhone">
-                      <div id="menu2" data-popup="popupMenu">
 
-                            <div class="navPhoneContent">
-                              <button class="navPhoneContent2">
-                                <div class="navPhoneMenu"></div>
-                                <div class="navPhoneMenu"></div>
-                                <div class="navPhoneMenu"></div>
-                              </button>
-                            </div>
+<div id="corps">
 
-                        </div>
 
-                        <div id="menu4">
-                            <div class="cross">
-                                <button class="cross2">
-                                  <div class="crossR"></div>
-                                  <div class="crossL"></div>
-                                </button>
-                            </div>
-                        </div>
-                        
-                    <div id="menu">
-                        <div class="texteButton2">
-                          <a href="reserver/"><button class="itemButton" id="reserver">Réserver ma cible</button></a>
-                        </div>
-                    </div>
+    <div id="videoFond">
 
-                </div>
 
-        <div class="popup" id="popupMenu">
-<!--                 <div id="menu3">
-                    <div id="menu4">
-                        <div class="cross"><div class="crossR"></div><div class="crossL"></div>
-                    	</div>
-                    </div>
-                </div> -->
+    </div>
 
-                <div id="navcontainer2">
-                  <div id="itemsContainer">
-                        <a><button class="itemNav" id="link1" data-hover>Presentation</button></a>
-                        <a><button  class="itemNav" id="link3" data-hover>Boire & Manger</button></a>
-                        <a href="entreprise/"><button  class="itemNav" id="linkEntreprise" data-hover>Entreprise</button></a>
-                        <a><button  class="itemNav" id="link4" data-hover>Horaires</button></a>
-                        <a><button  class="itemNav" id="link5" data-hover>Contact</button></a>
-                  </div>
+    <div class="logoMaTarget">
+        <img src="public/img/commun/MaTarget_logotype.png" width="140px" height="auto">
+    </div>
 
-                </div>
+    <div class="texteBienvenueContainer">
+        <h1 class="texteBienvenueContainer2">
 
-        </div>
+        </h1>
+    </div>
 
 
+</div>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script type="text/javascript" src="public/js/index.js"></script>
 
 
-
-        <div id="corps">
-          <div class="scroll">
-            <img src="img/scroll1.png" class="responsiveScroll spinner"/>
-            <img src="img/scroll2.png" class="responsiveScroll2 pulser"/>
-          </div>
-
-        	<div id="videoFond">
-<!--         		<video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop>
-
-				<source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
-				<source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
-
-				</video> -->
-
-        	</div>
-
- <!--        	<button id="pauseButton">Pause</button> -->
- 			<div class="logoMaTarget">
- 				<img src="img/MaTarget_logotype.png" width="140px" height="auto">
- 			</div>
-
-        	<div class="texteBienvenueContainer">
-        		<h1 class="texteBienvenueContainer2">
-<!-- 	        	<div class="texteBienvenue"><span>Bienvenue chez
-	        	</span></div> -->
-	        	<img src="img/matarget.png" class="responsive" width="400px" height="auto">
-	        	</h1>
-        	</div>
-
-
-
-        </div>
-
-        <div id="corps2">
-        	<div id="presentation">
-            <div id="presentation2">
-              <iframe class="videoMaTarget" width="100%" height="auto" src="https://www.youtube.com/embed/cEvL4Ah8XMY?autoplay=1&mute=1&autohide=1" title="YouTube video player" frameborder="0" allowfullscreen></iframe>            
-
-        		<div class="textePresentation" style="margin-left: 20px;"> 
-        			
-        			<h2 class="titreTexte">Découvrez Ma Target</h2>
-
-        				<h3 class="texte1">
-                  Un nouveau concept arrive sur Brest ! <br>
-                  Entre amis, collègues ou même en famille, venez profiter de ce lieu inédit créé autour de la fléchette afin de vous divertir par temps pluvieux ou ensoleillé à tout moment de l’année !
-        				</h3>
-                <div id="buttonPresentation">
-                  <div class="texteButton2">
-                  </div>
-               </div>
-        		</div>
-            
-          </div>
-
-        	</div>
-        </div>
-
-        <div class="sliderMaTarget">
-        <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true, "autoPlay": 6000, "pauseAutoPlayOnHover": false, "dragThreshold": 10}'>
-          <div class="gallery-cell">
-            <img src="img/slider/1.jpg" width="100%" height="auto" class="responsiveSlider" alt="imageSlider1"/>
-          </div>
-          <div class="gallery-cell">
-            <img src="img/slider/2.jpg"  width="100%" height="auto" class="responsiveSlider" alt="imageSlider2"/>
-          </div>
-          <div class="gallery-cell">
-            <img src="img/slider/3.jpg"  width="100%" height="auto" class="responsiveSlider" alt="imageSlider3"/>
-          </div>
-          <div class="gallery-cell">
-            <img src="img/slider/4.jpg"  width="100%" height="auto" class="responsiveSlider" alt="imageSlider4"/>
-          </div>
-          <div class="gallery-cell">
-            <img src="img/slider/5.jpg"  width="100%" height="auto" class="responsiveSlider" alt="imageSlider5"/>
-          </div>
-          <div class="gallery-cell">
-            <img src="img/slider/6.jpg"  width="100%" height="auto" class="responsiveSlider" alt="imageSlider6"/>
-          </div>
-          <div class="gallery-cell">
-            <img src="img/slider/7.jpg"  width="100%" height="auto" class="responsiveSlider" alt="imageSlider7"/>
-          </div>
-          <div class="gallery-cell">
-            <img src="img/slider/8.jpg"  width="100%" height="auto" class="responsiveSlider" alt="imageSlider8"/>
-          </div>
-          <div class="gallery-cell">
-            <img src="img/slider/9.jpg"  width="100%" height="auto" class="responsiveSlider" alt="imageSlider9"/>
-          </div>
-          <div class="gallery-cell">
-            <img src="img/slider/10.jpg"  width="100%" height="auto" class="responsiveSlider" alt="imageSlider10"/>
-          </div>
-          <div class="gallery-cell">
-            <img src="img/slider/11.jpg"  width="100%" height="auto" class="responsiveSlider" alt="imageSlider11"/>
-          </div>
-        </div>
-        </div>
-
-        <div id="raisons">
-<!--         	<div class="titre">4 Raisons de venir chez nous</div> -->
-        	<div class="raisonContainer">
-            <div class="raison">
-              <div class="raisonContainer2">
-<!--               <div class="raisonNumber"><img src="img/raison1.png" class="responsiveNumber"></div> -->
-              <img src="img/raison4.png" class="raisonImageResponsive"/>
-              </div>
-              <h3 class="texteRaison">
-                Le seul bar à jeux dédié 100% aux fléchettes au cœur de Brest avec une équipe dévouée à vous faire passer des moments uniques.
-              </h3>
-            </div>
-            <div class="raison2">
-              <div class="raisonContainer2">
-<!--               <div class="raisonNumber"><img src="img/raison2.png" class="responsiveNumber"></div> -->
-              <img src="img/raison3.png" class="raisonImageResponsive"/>
-              </div>
-              <h3 class="texteRaison">
-                Une nouvelle manière de jouer aux fléchettes alliant technologie et interface de jeu innovante pour des parties inoubliables.
-              </h3>
-            </div>
-            <div class="raison">
-              <div class="raisonContainer2">
-<!--               <div class="raisonNumber"><img src="img/raison3.png" class="responsiveNumber"></div> -->
-              <img src="img/raison2.png" class="raisonImageResponsive"/>
-              </div>
-              <h3 class="texteRaison">
-                De 2 à 6 personnes par piste, privatisation ou semi-privatisation du lieu, il y en a pour tous les goûts !
-              </h3>
-            </div>
-            <div class="raison2">
-              <div class="raisonContainer2">
-<!--               <div class="raisonNumber"><img src="img/raison4.png" class="responsiveNumber"></div> -->
-              <img src="img/raison1.png" class="raisonImageResponsive"/>
-              </div>
-              <h3 class="texteRaison">
-                T’aimes pas ça la fléchette ? Ça tombe bien on a aussi pensé à toi, on dispose d’une terrasse et d'un écran pour retransmettre les matchs sportifs !
-              </h3>
-            </div>
-          </div>
-	        	
-        </div>
-
-
-<!--         <div id="details">
-        	<div class="texte4">Ma Target c'est le souhait de créer un lieu unique au sein de notre cité Bestoise où l'on peut s'amuser, se restaurer.</div>
-        </div> -->
-
-<!--         <div class="titreContainer">
-		<div class="titre" id="link3cible">Mon menu</div>
-		</div> -->
-
-        <div id="menuContainer">
-        	<div class="menu1" >
-        		<div class="menuDetail1">
-                <img src="img/menuBar.png" class="responsiveMenu"/>
-              <div id="buttonFood">
-                 <div class="texteButton2">
-                     <button class="itemButton" onclick="location.href='drink/';">Voir les menus</button>
-                 </div>
-              </div>
-        		</div>
-        	</div>
-<!--         	<div class="menu2">
-        		<div class="menuDetail2">
-        			<img src="img/menuBar.png" class="responsiveMenu"/>
-              <div id="buttonBar">
-                 <div class="texteButton2">
-                     <button class="itemButton" onclick="location.href='drink/';" >Voir le menu Bar</button>
-                 </div>
-              </div>
-        		</div>
-        	</div> -->
-        </div>
-
-
-        <div id="entrepriseContainer">
-          
-        	<div class="imageEntreprise">
-            <img src="img/matarget5.png" class="responsive2" >
-          </div>
-
-        	<div class="texteEntrepriseContainer">
-
-        		<div class="texteEntreprise">
-
-        			<h4 class="sousTitreTexteEntreprise">OFFRE ENTREPRISES</h4>
-
-        			<h2 class="titreTexteEntreprise">
-              MA TARGET AIME AUSSI LES ENTREPRISES
-              </h2>
-
-        			<h3 class="texteTexteEntreprise">
-                Venez profiter entre collègues de cette nouvelle interface développée autour de la fléchette afin de vous divertir, créer du lien dans vos équipes, et montrer vos talents avoués ou cachés dans ce jeu d’adresse. 
-              Nous vous accueillons lors de vos séminaires et soirées entre collaborateurs.
-              </h3>
-
-    					<div id="decouvrirEntreprise">
-    	           <div class="texteButton2">
-    	               <a href="#"><button class="itemButton" onclick="location.href='entreprise/';">Découvrir nos offres</button></a>
-    	           </div>
-              </div>
-
-            </div>
-
-        	</div>
-
-        </div>
-
-<!--         <div class="menuContainer">
-        	<div class="menu3">
-        		<div class="menuDetail3">
-        			<div class="texte2"> Menu 3</div>
-        		</div>
-        	</div>
-        	<div class="menu4">
-        		<div class="menuDetail4">
-        			<div class="texte2"> Menu 4</div>
-        		</div>
-        	</div>
-        </div> -->
-
-
-        <div id="footer">
-        	<div class="footerContainer">
-
-        		<div class="footerContainer1">
-        			<div class="footerSousContainer">
-	        			<h4 class="titreFooter">
-	        				Où nous trouver
-	        			</h4>
-	        			<h5 class="texteFooter">
-	        				<a href="https://goo.gl/maps/xk51QQRA694xyZEX6"><b style="color: white">11 Rue de Siam, 29200 BREST</b></a>
-	        			</h5>
-        			</div>
-        			<div class="footerSousContainer">
-	        			<h4 class="titreFooter">
-	        				Contact
-	        			</h4>
-	        			<h5 class="texteFooter">
-	        				Téléphone
-	        			</h5>
-	        			<h5 class="texteFooter">
-	        				Mail : <a style="color:white" href="mailto:contact@ma-target.fr">contact@ma-target.fr</a>
-	        			</h5>
-        			</div>
-        		</div>
-
-        		<div class="footerContainer1">
-					    <div class="footerSousContainer">
-	        			<h4 class="titreFooter">
-	        				Nos horaires
-	        			</h4>
-	        			<h5 class="texteFooter">
-	        				17h-00h du lundi au samedi
-	        			</h5>
-        			</div>
-        		</div>
-
-            <div class="footerContainer1">
-              <div class="footerSousContainer">
-                <h4 class="titreFooter">
-                  Service Client
-                </h4>
-                <a href="cgv.html">
-                  <h5 class="texteFooter">
-                  Conditions Générales de Vente
-                  </h5>
-                </a>
-                <h5 class="texteFooter">
-                  Mentions Légales
-                </h5>
-              </div>
-            </div>
-
-        	</div>
-            <h6 class="texteFooter2">2021 © Ma Target - créé par <a href="https://www.instagram.com/axldesignoff/?hl=fr">@axldesignoff</a></h6>
-        </div>
-
-
-
-    <script type="text/javascript" src="js/index.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
-
-
-<!-- <script>
-    $(document).ready(function() {
- 
-    setTimeout(function(){
-        $('body').addClass('loaded');
-    }, 500);
- 
-});
-</script> -->
-
-<script>           
-$(document).ready(function() {
-  var duration = 500;
-  $('.scroll').click(function(event) {
-    // Un clic provoque le retour en haut animé.
-    event.preventDefault();
-    $('html, body').animate({scrollTop: $("#presentation2").offset().top}, duration);
-    return false;
-  })
-});
-</script>
-
-<script>
-        $( "#facebook" ).hover(
-        function() {
-          $( "#fb1" ).css({"visibility":"hidden"});
-          $("#fb2" ).css({"visibility":"visible"});
-        }, function() {
-          $("#fb1").css({"visibility":"visible"});
-          $("#fb2" ).css({"visibility":"hidden"});
-        }
-      );
-
-        $( "#instagram" ).hover(
-        function() {
-          $( "#insta1" ).css({"visibility":"hidden"});
-          $("#insta2" ).css({"visibility":"visible"});
-        }, function() {
-          $("#insta1").css({"visibility":"visible"});
-          $("#insta2" ).css({"visibility":"hidden"});
-        }
-      );
-</script>
-
-<script>
-  $("#link1").click(function() {
-    $('.popup').animate({width:'0'},350);
-	    $('#menu2').css({"display":"flex"});
-      $('#menu4').css({"display":"none"});
-      $('#reserver').css({"border":"solid #f3cf12 3px"});
-
-    
-
-    $('html, body').animate({
-        scrollTop: $("#presentation").offset().top
-    }, 500);
-});
-
-    $("#link2").click(function() {
-      $('.popup').animate({width:'0'},350);
-	    $('#menu2').css({"display":"flex"});
-      $('#menu4').css({"display":"none"});
-      $('#reserver').css({"border":"solid #f3cf12 3px"});
-
-    
-    $('html, body').animate({
-        scrollTop: $("#corps").offset().top
-    }, 500);
-});
-
-    $("#link3").click(function() {
-      $('.popup').animate({width:'0'},350);
-	    $('#menu2').css({"display":"flex"});
-      $('#menu4').css({"display":"none"});
-      $('#reserver').css({"border":"solid #f3cf12 3px"});
-
-    $('html, body').animate({
-        scrollTop: $("#menuContainer").offset().top
-    }, 500);
-});
-
-
-    $("#link4").click(function() {
-      $('.popup').animate({width:'0'},350);
-	    $('#menu2').css({"display":"flex"});
-      $('#menu4').css({"display":"none"});
-      $('#reserver').css({"border":"solid #f3cf12 3px"});
-
-    $('html, body').animate({
-        scrollTop: $("#footer").offset().top
-    }, 500);
-});
-
-
-    $("#link5").click(function() {
-      $('.popup').animate({width:'0'},350);
-	    $('#menu2').css({"display":"flex"});
-      $('#menu4').css({"display":"none"});
-      $('#reserver').css({"border":"solid #f3cf12 3px"});
-
-    $('html, body').animate({
-        scrollTop: $("#footer").offset().top
-    }, 500);
-});
-</script>
-
-<script>
-           ;(function(){
-             function id(v){ return document.getElementById(v); }
-             function loadbar() {
-               var ovrl = id("overlay"),
-                   prog = id("progress"),
-                   stat = id("progstat"),
-                   img = document.images,
-                   c = 0,
-                   tot = img.length;
-               if(tot == 0) return doneLoading();
-
-               function imgLoaded(){
-                 c += 1;
-                 var perc = ((100/tot*c) << 0) +"%";
-                 prog.style.width = perc;
-                 stat.innerHTML = perc;
-                 if(c===tot) return doneLoading();
-               }
-               function doneLoading(){
-                 setTimeout(function(){ 
-                   ovrl.style.display = "none";
-                   $('body').addClass('loaded');
-                 }, 1200);
-               }
-               for(var i=0; i<tot; i++) {
-                 var tImg     = new Image();
-                 tImg.onload  = imgLoaded;
-                 tImg.onerror = imgLoaded;
-                 tImg.src     = img[i].src;
-               }    
-             }
-             document.addEventListener('DOMContentLoaded', loadbar, false);
-           }());
-       </script>
-
-
-
-
-
-    <script>
-      AOS.init();
-    </script>
-
-    </body>
+</body>
 </html>
