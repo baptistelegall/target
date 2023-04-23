@@ -4,11 +4,11 @@
 
    <url>
 
-      <loc>http://www.ma-target.fr/</loc>
+      <loc>https://www.ma-target.fr/</loc>
 
-      <lastmod>2021-04-22</lastmod>
+      <lastmod>2023-04-23</lastmod>
 
-      <changefreq>never</changefreq>
+      <changefreq>monthly</changefreq>
 
       <priority>0.8</priority>
 
@@ -16,51 +16,101 @@
 
    <url>
 
-      <loc>http://www.ma-target.fr/reserver/</loc>
+      <loc>https://www.ma-target.fr/brest/reserver/</loc>
 
-      <lastmod>2021-04-22</lastmod>
+      <lastmod>2023-04-23</lastmod>
 
-      <changefreq>always</changefreq>
-
-   </url>
-
-   <url>
-
-      <loc>http://www.ma-target.fr/entreprise/</loc>
-
-      <lastmod>2021-04-22</lastmod>
-
-      <changefreq>never</changefreq>
+      <changefreq>monthly</changefreq>
 
    </url>
 
    <url>
 
-      <loc>http://www.ma-target.fr/cgv</loc>
+      <loc>https://www.ma-target.fr/brest/entreprise/</loc>
 
-      <lastmod>2021-04-22</lastmod>
+      <lastmod>2023-04-23</lastmod>
 
-      <changefreq>never</changefreq>
-
-   </url>
-
-   <url>
-
-      <loc>http://www.ma-target.fr/drink/</loc>
-
-      <lastmod>2021-04-22</lastmod>
-
-      <changefreq>never</changefreq>
+      <changefreq>monthly</changefreq>
 
    </url>
 
    <url>
 
-      <loc>http://www.ma-target.fr/food/</loc>
+      <loc>https://www.ma-target.fr/brest/cgv</loc>
 
-      <lastmod>2021-04-22</lastmod>
+      <lastmod>2023-04-23</lastmod>
 
-      <changefreq>never</changefreq>
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.ma-target.fr/brest/drink/</loc>
+
+      <lastmod>2023-04-23</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.ma-target.fr/brest/food/</loc>
+
+      <lastmod>2023-04-23</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.ma-target.fr/lorient/reserver/</loc>
+
+      <lastmod>2023-04-23</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.ma-target.fr/lorient/entreprise/</loc>
+
+      <lastmod>2023-04-23</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.ma-target.fr/lorient/cgv</loc>
+
+      <lastmod>2023-04-23</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.ma-target.fr/lorient/drink/</loc>
+
+      <lastmod>2023-04-23</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.ma-target.fr/lorient/food/</loc>
+
+      <lastmod>2023-04-23</lastmod>
+
+      <changefreq>monthly</changefreq>
 
    </url>
 </urlset>
