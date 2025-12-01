@@ -2226,20 +2226,20 @@ button {
 	 font-family: 'Bebas Neue', cursive;
 	font-weight: 800;
 	letter-spacing: 3px;
+  text-align: center;
 	text-transform: uppercase;
 	background-color: #f3cf12;
-	font-size: 6vw;
+	font-size: 4vw;
 	color: #0e2247;
 	width: 100%;
 	height: auto;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	align-content: center;
 }
 
 .texteBienvenue span {
-	height: 80px;
+	height: auto;
 }
 
 .logoMaTarget {
