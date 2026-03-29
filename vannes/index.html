@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="../public/fonts.css" type="text/css" charset="utf-8" />
 	<link rel="preconnect" href="https://fonts.gstatic.com">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <meta http-equiv="Permissions-Policy" content="payment=(self 'https://sdk.zenchef.com')">
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Mono&family=Teko:wght@300&family=Vidaloka&family=Yellowtail&family=PT+Sans+Caption&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="icon" type="image/png" href="../public/img/commun/matargetLogo.png" sizes="32x32">
@@ -239,22 +238,13 @@
 		</div> -->
 
         <div id="menuContainer">
-          <div class="menu1" >
-        		<div class="menuDetail1">
-                <img src="../public/img/vannes/image-menu-midi.jpeg" onclick='location.href="https://basilyk.app/l/oUYikcaz"' class="responsiveMenu"/>
-              <div id="buttonFood">
-                 <div class="texteButton2">
-                     <button class="itemButton" onclick='location.href="https://basilyk.app/l/oUYikcaz"'>La carte du midi</button>
-                 </div>
-              </div>
-        		</div>
-        	</div>
+
         	<div class="menu1" >
         		<div class="menuDetail1">
                 <img src="../public/img/vannes/image-menu-bar.jpeg" onclick='location.href="https://basilyk.app/l/MQBEsfn6"' class="responsiveMenu"/>
               <div id="buttonFood">
                  <div class="texteButton2">
-                     <button class="itemButton" onclick='location.href="https://basilyk.app/l/MQBEsfn6"'>La carte du soir</button>
+                     <button class="itemButton" onclick='location.href="https://basilyk.app/l/MQBEsfn6"'>La carte</button>
                  </div>
               </div>
         		</div>
@@ -340,11 +330,10 @@
 	        				Nos horaires
 	        			</h4>
 	        			<h5 class="texteFooter">
-                  16h-00h le lundi <br>
-	        				12h-00h du mardi au jeudi <br>
-                  12h-01h le vendredi<br>
-                  14h-01h le samedi <br>
-                  dimanche
+                  17h-00h lundi et mardi<br>
+	        				16h-00h mercredi et jeudi <br>
+                  14h-01h vendredi et samedi<br>
+                  14h-23h dimanche <br>
 	        			</h5>
         			</div>
         		</div>
@@ -372,16 +361,7 @@
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script type="text/javascript" src="../public/js/index.js"></script>
 
-<script>
-  ;(function (d, s, id) {
-    const el = d.getElementsByTagName(s)[0]
-    if (d.getElementById(id) || el.parentNode == null) return
-    var js = d.createElement(s)
-    js.id = id
-    js.src = 'https://sdk.zenchef.com/v1/sdk.min.js'
-    el.parentNode.insertBefore(js, el)
-  })(document, 'script', 'zenchef-sdk')
-</script>
+
 <div class="zc-widget-config"
    data-restaurant="381099"
    data-open="2000"></div>
