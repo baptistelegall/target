@@ -1,0 +1,1464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ouvrez un bar à fléchettes Ma Target dans votre ville. Déposez votre candidature de franchise." />
+  <meta name="keywords" content="franchise, franchisé, devenir franchisé, ouvrir, bar, fléchettes, concept, réseau, développement, Ma Target, création, entreprise" />
+  <title>Devenir franchisé - Ma Target</title>
+
+  <script type="text/javascript">document.documentElement.className += ' js-anim';</script>
+
+  <link rel="stylesheet" href="https://ma-target.fr/public/fonts.css" type="text/css" charset="utf-8" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Mono&family=Teko:wght@300&family=Vidaloka&family=Yellowtail&family=PT+Sans+Caption&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="icon" type="image/png" href="https://ma-target.fr/public/img/commun/matargetLogo.png" sizes="32x32">
+
+  <style>
+  html { scroll-behavior: smooth }
+
+  /* ====================== ANIMATIONS ====================== */
+  .js-anim .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1);
+    will-change: opacity, transform;
+  }
+  .js-anim .reveal.gauche { transform: translateX(-45px) }
+  .js-anim .reveal.droite { transform: translateX(45px) }
+  .js-anim .reveal.zoom { transform: scale(.92) }
+  .js-anim .reveal.vu { opacity: 1; transform: none }
+
+  /* Barre de progression */
+  #barreProgression {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background: linear-gradient(90deg, #f3cf12, #fde68a);
+    z-index: 99901;
+    transition: width .12s linear;
+    pointer-events: none;
+  }
+
+  /* Bouton flottant */
+  #ctaFlottant {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 99890;
+    opacity: 0;
+    transform: translateY(25px);
+    pointer-events: none;
+    transition: all .45s cubic-bezier(.22,.61,.36,1);
+  }
+  #ctaFlottant.vu { opacity: 1; transform: none; pointer-events: auto }
+  @media all and (max-width: 800px) {
+    #ctaFlottant { right: 15px; bottom: 15px; left: 15px }
+    #ctaFlottant .btnFranchise { width: 100% }
+  }
+
+  /* ====================== HERO ====================== */
+  .hero {
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0e2247 0%, #162d5a 50%, #0e2247 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 80%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(243, 207, 18, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to top, rgba(14, 34, 71, 0.9), transparent);
+    pointer-events: none;
+  }
+
+  .heroContainer {
+    max-width: 1200px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media all and (max-width: 900px) {
+    .heroContainer { grid-template-columns: 1fr; text-align: center; gap: 40px }
+    .heroContent { order: 2 }
+    .heroImage { order: 1 }
+  }
+
+  .heroBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(243, 207, 18, 0.15);
+    border: 1px solid rgba(243, 207, 18, 0.3);
+    color: #f3cf12;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-family: 'PT Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+
+  .heroBadge::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #f3cf12;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1) }
+    50% { opacity: 0.5; transform: scale(1.3) }
+  }
+
+  .heroTitre {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(48px, 7vw, 72px);
+    color: white;
+    letter-spacing: 4px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+  }
+
+  .heroTitre span {
+    color: #f3cf12;
+  }
+
+  .heroTexte {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+    margin-bottom: 35px;
+    max-width: 500px;
+  }
+
+  @media all and (max-width: 900px) {
+    .heroTexte { margin: 0 auto 35px }
+  }
+
+  .heroBoutons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  @media all and (max-width: 900px) {
+    .heroBoutons { justify-content: center }
+  }
+
+  .heroImage {
+    position: relative;
+  }
+
+  .heroImage img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  }
+
+  .heroImage::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 60%;
+    height: 60%;
+    background: #f3cf12;
+    border-radius: 20px;
+    z-index: -1;
+  }
+
+  @media all and (max-width: 900px) {
+    .heroImage { max-width: 500px; margin: 0 auto }
+    .heroImage::after { bottom: -15px; right: -15px }
+  }
+
+  /* ====================== BOUTONS ====================== */
+  .btnFranchise {
+    position: relative !important;
+    z-index: 1;
+    background: #f3cf12;
+    border: none;
+    border-radius: 8px;
+    color: #0e2247;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .3s ease;
+    box-shadow: 0 4px 15px rgba(243, 207, 18, 0.3);
+  }
+
+  .btnFranchise:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(243, 207, 18, 0.4);
+  }
+
+  .btnFranchise:active {
+    transform: translateY(-1px);
+  }
+
+  .btnOutline {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    box-shadow: none;
+  }
+
+  .btnOutline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: none;
+  }
+
+  /* ====================== CHIFFRES CLÉS ====================== */
+  #chiffresCles {
+    width: 100vw;
+    background: white;
+    padding: 80px 20px;
+  }
+
+  .chiffresContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  @media all and (max-width: 900px) {
+    .chiffresContainer { grid-template-columns: repeat(2, 1fr) }
+  }
+
+  @media all and (max-width: 500px) {
+    .chiffresContainer { grid-template-columns: 1fr }
+  }
+
+  .chiffre {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 35px 25px;
+    text-align: center;
+    transition: all .4s ease;
+    border: 1px solid rgba(14, 34, 71, 0.08);
+  }
+
+  .chiffre:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(14, 34, 71, 0.1);
+    border-color: #f3cf12;
+  }
+
+  .chiffreNombre {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 42px;
+    letter-spacing: 2px;
+    color: #0e2247;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .chiffreNombre span {
+    color: #f3cf12;
+  }
+
+  .chiffreLibelle {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ====================== SECTIONS ====================== */
+  .section {
+    width: 100vw;
+    padding: 100px 20px;
+  }
+
+  .sectionAlt {
+    background: #f8fafc;
+  }
+
+  .sectionDark {
+    background: #0e2247;
+  }
+
+  .sectionHeader {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+  }
+
+  .sectionTag {
+    display: inline-block;
+    font-family: 'PT Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f3cf12;
+    margin-bottom: 15px;
+  }
+
+  .sectionTitre {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(36px, 5vw, 52px);
+    color: #0e2247;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+  }
+
+  .sectionDark .sectionTitre {
+    color: white;
+  }
+
+  .sectionDesc {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    color: #6b7280;
+    line-height: 1.4;
+  }
+
+  .sectionDark .sectionDesc {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* ====================== RAISONS ====================== */
+  .raisonsGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  @media all and (max-width: 800px) {
+    .raisonsGrid { grid-template-columns: 1fr }
+  }
+
+  .raisonCard {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    transition: all .4s ease;
+    border: 1px solid rgba(14, 34, 71, 0.08);
+  }
+
+  .raisonCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(14, 34, 71, 0.1);
+  }
+
+  .raisonIcon {
+    min-width: 60px;
+    height: 60px;
+    background: #0e2247;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .raisonIcon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .raisonTitre {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 24px;
+    color: #0e2247;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .raisonTexte {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #6b7280;
+    line-height: 1.4;
+  }
+
+  /* ====================== ÉTAPES ====================== */
+  .etapesContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .etapesLigne {
+    position: absolute;
+    left: 35px;
+    top: 50px;
+    bottom: 50px;
+    width: 3px;
+    background: linear-gradient(to bottom, #f3cf12, #0e2247);
+    border-radius: 3px;
+  }
+
+  @media all and (max-width: 600px) {
+    .etapesLigne { left: 27px }
+  }
+
+  .etape {
+    display: flex;
+    gap: 30px;
+    padding: 25px 0;
+    position: relative;
+  }
+
+  .etapeNumero {
+    min-width: 70px;
+    height: 70px;
+    background: #0e2247;
+    color: #f3cf12;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 28px;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+    transition: all .4s ease;
+    box-shadow: 0 4px 15px rgba(14, 34, 71, 0.2);
+  }
+
+  .etape:hover .etapeNumero {
+    background: #f3cf12;
+    color: #0e2247;
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(243, 207, 18, 0.4);
+  }
+
+  @media all and (max-width: 600px) {
+    .etapeNumero { min-width: 55px; height: 55px; font-size: 22px }
+    .etape { gap: 20px }
+  }
+
+  .etapeContenu {
+    flex: 1;
+    padding-top: 10px;
+  }
+
+  .etapeTitre {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 26px;
+    color: #0e2247;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .etapeTexte {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    color: #6b7280;
+    line-height: 1.3;
+  }
+
+  /* ====================== FORMULAIRE ====================== */
+  #candidature {
+    width: 100vw;
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0e2247 0%, #162d5a 100%);
+    padding: 80px 20px;
+  }
+
+  .franchiseCard {
+    width: 100%;
+    max-width: 900px;
+    background: white;
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  @media all and (max-width: 600px) {
+    .franchiseCard { padding: 30px 20px; border-radius: 16px }
+  }
+
+  .formHeader {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .formTitre {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(32px, 5vw, 42px);
+    color: #0e2247;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+  }
+
+  .formDesc {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #6b7280;
+  }
+
+  #formFranchise .blocForm {
+    border: 0;
+    margin: 0 0 45px;
+    padding: 0;
+    width: 100%;
+  }
+
+  #formFranchise legend {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0e2247;
+    font-size: 22px;
+    width: 100%;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e5e7eb;
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  #formFranchise legend:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 0;
+    background: #f3cf12;
+    transition: width 1s cubic-bezier(.22,.61,.36,1) .2s;
+  }
+
+  #formFranchise .blocForm.vu legend:after {
+    width: 80px;
+  }
+
+  .ligneForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 15px;
+  }
+
+  .ligneForm.trois {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ligneForm.plein {
+    grid-template-columns: 1fr;
+  }
+
+  @media all and (max-width: 700px) {
+    .ligneForm, .ligneForm.trois {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  .champ {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+
+  .champ label {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #0e2247;
+    font-size: 18px;
+    margin-bottom: 8px;
+    transition: color .3s ease;
+  }
+
+  .champ:focus-within label {
+    color: #f3cf12;
+  }
+
+  .champ label .obl {
+    color: #dc2626;
+  }
+
+  .aide {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #9ca3af;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  #formFranchise input[type=text],
+  #formFranchise input[type=email],
+  #formFranchise input[type=tel],
+  #formFranchise select,
+  #formFranchise textarea {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #0e2247;
+    background-color: #f8fafc;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    width: 100%;
+    transition: all .3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  #formFranchise textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  #formFranchise select {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230e2247'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 24px;
+    padding-right: 44px;
+  }
+
+  #formFranchise input:focus,
+  #formFranchise select:focus,
+  #formFranchise textarea:focus {
+    outline: none;
+    border-color: #f3cf12;
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(243, 207, 18, 0.2);
+  }
+
+  .champ.erreur input,
+  .champ.erreur select,
+  .champ.erreur textarea {
+    border-color: #dc2626;
+    background-color: #fef2f2;
+  }
+
+  .champ.secoue input,
+  .champ.secoue select,
+  .champ.secoue textarea {
+    animation: secousse .4s ease;
+  }
+
+  @keyframes secousse {
+    0%, 100% { transform: translateX(0) }
+    20% { transform: translateX(-7px) }
+    40% { transform: translateX(6px) }
+    60% { transform: translateX(-4px) }
+    80% { transform: translateX(2px) }
+  }
+
+  .messageErreur {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #dc2626;
+    line-height: 1.1;
+    margin: 6px 0 0;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all .3s ease;
+  }
+
+  .champ.erreur .messageErreur {
+    opacity: 1;
+    transform: none;
+  }
+
+  #erreurGlobale {
+    opacity: 1;
+    transform: none;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .choix {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .choix label {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #0e2247;
+    display: inline-flex;
+    align-items: center;
+    background: #f8fafc;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: all .3s ease;
+  }
+
+  .choix label:hover {
+    border-color: #f3cf12;
+    background: #fffef5;
+  }
+
+  .choix input {
+    accent-color: #0e2247;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .choix label.actif {
+    background: #f3cf12;
+    border-color: #f3cf12;
+    color: #0e2247;
+  }
+
+  .consentement {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .consentement input {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    margin-top: 2px;
+    accent-color: #0e2247;
+  }
+
+  .consentement span {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #6b7280;
+  }
+
+  .consentement a {
+    color: #0e2247;
+    text-decoration: underline;
+  }
+
+  .ligneEnvoi {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  @media all and (max-width: 600px) {
+    .ligneEnvoi { flex-direction: column }
+    .ligneEnvoi .btnFranchise { width: 100% }
+  }
+
+  .noteEnvoi {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #9ca3af;
+    line-height: 1.3;
+  }
+
+  #confirmation {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .confirmationIcon {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #f3cf12 0%, #fde68a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 40px;
+  }
+
+  .titreConfirmation {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #0e2247;
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  #confirmation p {
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    color: #6b7280;
+    line-height: 1.3;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .envoye #formFranchise { display: none }
+  .envoye #confirmation { display: block }
+
+  /* ====================== ACCESSIBILITÉ ====================== */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto }
+    .js-anim .reveal, .js-anim .reveal.gauche, .js-anim .reveal.droite, .js-anim .reveal.zoom {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    .champ.secoue input, .champ.secoue select, .champ.secoue textarea { animation: none !important }
+    #barreProgression, #ctaFlottant { transition: none !important }
+  }
+  </style>
+</head>
+
+<body onload="">
+  <div id="barreProgression"></div>
+
+  <div id="loader-wrapper">
+    <div id="loader">
+      <div class="spineur1"></div>
+      <div class="spineur2"></div>
+      <div class="spineur3"></div>
+      <div id="overlay">
+        <div id="progstat"></div>
+        <div id="progress"></div>
+      </div>
+    </div>
+    <div class="loader-section section-top"></div>
+    <div class="loader-section2 section-top2"></div>
+  </div>
+
+  <div id="socialMedia">
+    <div class="socialMediaAnimation">
+      <a href="https://ma-target.fr/" title="Choisir un bar">
+        <button class="socialMedia" id="location">
+          <img src="https://ma-target.fr/public/img/commun/location-white.png" width="35px" id="location1">
+          <img src="https://ma-target.fr/public/img/commun/location-black.png" width="35px" id="location2">
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <div id="navPhone">
+    <div id="menu2" data-popup="popupMenu">
+      <div class="navPhoneContent">
+        <button class="navPhoneContent2">
+          <div class="navPhoneMenu"></div>
+          <div class="navPhoneMenu"></div>
+          <div class="navPhoneMenu"></div>
+        </button>
+      </div>
+    </div>
+    <div id="menu4">
+      <div class="cross">
+        <button class="cross2">
+          <div class="crossR"></div>
+          <div class="crossL"></div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" id="popupMenu">
+    <div id="navcontainer2">
+      <div id="itemsContainer">
+        <a href="../vannes/"><button class="itemNav" data-hover>Vannes</button></a>
+        <a href="../brest/"><button class="itemNav" data-hover>Brest</button></a>
+        <a href="../lorient/"><button class="itemNav" data-hover>Lorient</button></a>
+        <a href="#candidature"><button class="itemNav" data-hover>Candidater</button></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="heroContainer">
+      <div class="heroContent reveal gauche">
+        <div class="heroBadge">Recrutement ouvert</div>
+        <h1 class="heroTitre">OUVREZ UN <span>MA TARGET</span> DANS VOTRE VILLE</h1>
+        <p class="heroTexte">
+          Un bar de jeux 100% dédié à la fléchette connectée, avec une carte bar et street food.
+          Le concept tourne en exploitation : vous apportez la connaissance de votre ville, nous apportons tout le reste.
+        </p>
+        <div class="heroBoutons">
+          <a href="#candidature" class="btnFranchise">Déposer ma candidature</a>
+          <a href="#parcours" class="btnFranchise btnOutline">Voir le parcours</a>
+        </div>
+      </div>
+      <div class="heroImage reveal droite">
+        <img src="https://ma-target.fr/public/img/vannes/slider/3.jpg" alt="Salle de jeu Ma Target">
+      </div>
+    </div>
+  </section>
+
+  <!-- CHIFFRES CLÉS -->
+  <section id="chiffresCles">
+    <div class="chiffresContainer">
+      <div class="chiffre reveal zoom">
+        <div class="chiffreNombre"><span class="compteur" data-fin="180">0</span> – <span class="compteur" data-fin="350">0</span> m²</div>
+        <div class="chiffreLibelle">Surface recherchée</div>
+      </div>
+      <div class="chiffre reveal zoom" data-delai="100">
+        <div class="chiffreNombre"><span class="compteur" data-fin="8">0</span> à <span class="compteur" data-fin="14">0</span></div>
+        <div class="chiffreLibelle">Pistes connectées</div>
+      </div>
+      <div class="chiffre reveal zoom" data-delai="200">
+        <div class="chiffreNombre"><span class="compteur" data-fin="100000" data-sep="1">0</span> €</div>
+        <div class="chiffreLibelle">Apport minimum</div>
+      </div>
+      <div class="chiffre reveal zoom" data-delai="300">
+        <div class="chiffreNombre"><span class="compteur" data-fin="6">0</span> à <span class="compteur" data-fin="9">0</span> mois</div>
+        <div class="chiffreLibelle">Délai d'ouverture</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POURQUOI NOUS REJOINDRE -->
+  <section class="section sectionAlt">
+    <div class="sectionHeader">
+      <span class="sectionTag reveal">Pourquoi nous rejoindre</span>
+      <h2 class="sectionTitre reveal" data-delai="100">UN CONCEPT CLÉ EN MAIN</h2>
+      <p class="sectionDesc reveal" data-delai="200">Tout ce dont vous avez besoin pour lancer votre établissement</p>
+    </div>
+    <div class="raisonsGrid">
+      <div class="raisonCard reveal">
+        <div class="raisonIcon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f3cf12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="6"></circle>
+            <circle cx="12" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <div>
+          <h3 class="raisonTitre">CONCEPT ÉPROUVÉ</h3>
+          <p class="raisonTexte">Aménagement, cibles connectées, interface de jeu et carte bar & food déjà testés en exploitation. Un modèle qui fonctionne.</p>
+        </div>
+      </div>
+      <div class="raisonCard reveal" data-delai="100">
+        <div class="raisonIcon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f3cf12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="raisonTitre">FORMATION COMPLÈTE</h3>
+          <p class="raisonTexte">Immersion dans un établissement du réseau, formation de votre équipe et accompagnement personnalisé à l'ouverture.</p>
+        </div>
+      </div>
+      <div class="raisonCard reveal" data-delai="200">
+        <div class="raisonIcon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f3cf12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="raisonTitre">DOUBLE REVENU</h3>
+          <p class="raisonTexte">Deux sources de revenus complémentaires : le jeu à l'heure et le bar, avec la privatisation en complément.</p>
+        </div>
+      </div>
+      <div class="raisonCard reveal" data-delai="300">
+        <div class="raisonIcon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f3cf12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+        </div>
+        <div>
+          <h3 class="raisonTitre">SEMAINE REMPLIE</h3>
+          <p class="raisonTexte">Afterworks, séminaires d'entreprise, anniversaires, ligues et retransmissions sportives. Une activité diversifiée.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LE PARCOURS -->
+  <section class="section" id="parcours">
+    <div class="sectionHeader">
+      <span class="sectionTag reveal">Comment ça marche</span>
+      <h2 class="sectionTitre reveal" data-delai="100">LE PARCOURS</h2>
+      <p class="sectionDesc reveal" data-delai="200">De votre candidature à l'ouverture de votre établissement</p>
+    </div>
+    <div class="etapesContainer">
+      <div class="etapesLigne"></div>
+      <div class="etape reveal">
+        <div class="etapeNumero">01</div>
+        <div class="etapeContenu">
+          <h3 class="etapeTitre">VOTRE CANDIDATURE</h3>
+          <p class="etapeTexte">Vous remplissez le formulaire ci-dessous. Nous revenons vers vous sous 10 jours ouvrés.</p>
+        </div>
+      </div>
+      <div class="etape reveal" data-delai="100">
+        <div class="etapeNumero">02</div>
+        <div class="etapeContenu">
+          <h3 class="etapeTitre">PREMIER ÉCHANGE</h3>
+          <p class="etapeTexte">Un appel d'une heure pour comprendre votre projet, votre ville et votre capacité de financement.</p>
+        </div>
+      </div>
+      <div class="etape reveal" data-delai="200">
+        <div class="etapeNumero">03</div>
+        <div class="etapeContenu">
+          <h3 class="etapeTitre">DÉCOUVERTE SUR SITE</h3>
+          <p class="etapeTexte">Une journée dans un établissement en exploitation : le lieu, les chiffres, le quotidien d'une équipe.</p>
+        </div>
+      </div>
+      <div class="etape reveal" data-delai="300">
+        <div class="etapeNumero">04</div>
+        <div class="etapeContenu">
+          <h3 class="etapeTitre">ÉTUDE DE ZONE ET LOCAL</h3>
+          <p class="etapeTexte">Validation de la zone de chalandise, recherche du local, prévisionnel et montage du financement.</p>
+        </div>
+      </div>
+      <div class="etape reveal" data-delai="400">
+        <div class="etapeNumero">05</div>
+        <div class="etapeContenu">
+          <h3 class="etapeTitre">SIGNATURE ET OUVERTURE</h3>
+          <p class="etapeTexte">Contrat de franchise, travaux, formation de l'équipe, puis ouverture accompagnée sur place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULAIRE -->
+  <section id="candidature">
+    <div class="franchiseCard" id="zoneForm">
+      <div class="formHeader">
+        <h2 class="formTitre reveal">PARLEZ-NOUS DE VOTRE PROJET</h2>
+        <p class="formDesc reveal" data-delai="100">Ces informations restent confidentielles et servent uniquement à étudier votre candidature.</p>
+      </div>
+
+      <form id="formFranchise" action="envoi.php" method="post" novalidate data-demo="true">
+
+        <fieldset class="blocForm reveal">
+          <legend>Vous</legend>
+          <div class="ligneForm">
+            <div class="champ">
+              <label for="prenom">Prénom <span class="obl">*</span></label>
+              <input type="text" id="prenom" name="prenom" autocomplete="given-name" required>
+              <p class="messageErreur"></p>
+            </div>
+            <div class="champ">
+              <label for="nom">Nom <span class="obl">*</span></label>
+              <input type="text" id="nom" name="nom" autocomplete="family-name" required>
+              <p class="messageErreur"></p>
+            </div>
+          </div>
+          <div class="ligneForm">
+            <div class="champ">
+              <label for="email">Email <span class="obl">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+              <p class="messageErreur"></p>
+            </div>
+            <div class="champ">
+              <label for="tel">Téléphone <span class="obl">*</span></label>
+              <input type="tel" id="tel" name="telephone" autocomplete="tel" required>
+              <p class="messageErreur"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="blocForm reveal">
+          <legend>Votre projet d'implantation</legend>
+          <div class="ligneForm trois">
+            <div class="champ">
+              <label for="ville">Ville envisagée <span class="obl">*</span></label>
+              <input type="text" id="ville" name="ville" required>
+              <p class="messageErreur"></p>
+            </div>
+            <div class="champ">
+              <label for="departement">Département <span class="obl">*</span></label>
+              <input type="text" id="departement" name="departement" inputmode="numeric" placeholder="56" required>
+              <p class="messageErreur"></p>
+            </div>
+            <div class="champ">
+              <label for="horizon">Ouverture souhaitée <span class="obl">*</span></label>
+              <select id="horizon" name="horizon" required>
+                <option value="">Choisir…</option>
+                <option>Dans moins de 6 mois</option>
+                <option>Dans 6 à 12 mois</option>
+                <option>Dans 12 à 24 mois</option>
+                <option>Je me renseigne encore</option>
+              </select>
+              <p class="messageErreur"></p>
+            </div>
+          </div>
+          <div class="ligneForm plein">
+            <div class="champ">
+              <label id="lblLocal">Avez-vous déjà un local ? <span class="obl">*</span></label>
+              <div class="choix" role="radiogroup" aria-labelledby="lblLocal">
+                <label><input type="radio" name="local" value="oui" required> Oui, local identifié</label>
+                <label><input type="radio" name="local" value="recherche"> En cours de recherche</label>
+                <label><input type="radio" name="local" value="non"> Pas encore</label>
+              </div>
+              <p class="messageErreur"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="blocForm reveal">
+          <legend>Votre profil</legend>
+          <div class="ligneForm trois">
+            <div class="champ">
+              <label for="situation">Situation actuelle <span class="obl">*</span></label>
+              <select id="situation" name="situation" required>
+                <option value="">Choisir…</option>
+                <option>Salarié(e)</option>
+                <option>Chef(fe) d'entreprise</option>
+                <option>En reconversion</option>
+                <option>Investisseur</option>
+                <option>Autre</option>
+              </select>
+              <p class="messageErreur"></p>
+            </div>
+            <div class="champ">
+              <label for="experience">Expérience restauration/loisirs</label>
+              <select id="experience" name="experience">
+                <option value="">Choisir…</option>
+                <option>Aucune</option>
+                <option>Moins de 2 ans</option>
+                <option>2 à 5 ans</option>
+                <option>Plus de 5 ans</option>
+              </select>
+            </div>
+            <div class="champ">
+              <label for="apport">Apport personnel <span class="obl">*</span></label>
+              <select id="apport" name="apport" required>
+                <option value="">Choisir…</option>
+                <option>Moins de 50 000 €</option>
+                <option>50 000 € à 100 000 €</option>
+                <option>100 000 € à 150 000 €</option>
+                <option>Plus de 150 000 €</option>
+              </select>
+              <p class="messageErreur"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="blocForm reveal">
+          <legend>Votre message</legend>
+          <div class="ligneForm plein">
+            <div class="champ">
+              <label for="message">Présentez votre projet <span class="obl">*</span></label>
+              <span class="aide">Votre parcours, pourquoi cette ville, avec qui vous vous lancez.</span>
+              <textarea id="message" name="message" required></textarea>
+              <p class="messageErreur"></p>
+            </div>
+          </div>
+          <div class="ligneForm">
+            <div class="champ">
+              <label for="source">Comment avez-vous connu Ma Target ?</label>
+              <select id="source" name="source">
+                <option value="">Choisir…</option>
+                <option>J'ai joué dans un Ma Target</option>
+                <option>Réseaux sociaux</option>
+                <option>Bouche-à-oreille</option>
+                <option>Recherche internet</option>
+                <option>Salon ou presse</option>
+                <option>Autre</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="champ reveal">
+          <label class="consentement" for="consentement">
+            <input type="checkbox" id="consentement" name="consentement" required>
+            <span>J'accepte que Ma Target utilise ces informations pour étudier ma candidature et me
+              recontacter. Conformément au RGPD, je peux demander leur suppression à tout moment à
+              <a href="mailto:matargetbrest@gmail.com">matargetbrest@gmail.com</a>. <span class="obl">*</span></span>
+          </label>
+          <p class="messageErreur"></p>
+        </div>
+
+        <div class="ligneEnvoi reveal">
+          <p class="noteEnvoi">Les champs marqués <span class="obl" style="color:#dc2626">*</span> sont obligatoires.<br>Réponse sous 10 jours ouvrés.</p>
+          <button type="submit" class="btnFranchise">Envoyer ma candidature</button>
+        </div>
+
+        <p class="messageErreur" id="erreurGlobale" role="alert" aria-live="polite"></p>
+      </form>
+
+      <div id="confirmation" role="status">
+        <div class="confirmationIcon">✓</div>
+        <h3 class="titreConfirmation">Candidature envoyée</h3>
+        <p>Merci, votre dossier est bien arrivé. Un membre de l'équipe développement vous recontacte
+           sous 10 jours ouvrés au numéro indiqué. En attendant, le meilleur moyen de comprendre le
+           concept reste de venir jouer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bouton flottant -->
+  <div id="ctaFlottant">
+    <a href="#candidature" class="btnFranchise">Déposer ma candidature</a>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script type="text/javascript" src="https://ma-target.fr/public/js/index.js"></script>
+
+  <script type="text/javascript">
+  (function(){
+    var reduit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* Compteurs */
+    function espaces(n){
+      return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
+    function compter(el){
+      var fin = parseFloat(el.getAttribute('data-fin'));
+      var sep = el.getAttribute('data-sep') === '1';
+      if(isNaN(fin)) return;
+      if(reduit){ el.textContent = sep ? espaces(fin) : fin; return; }
+      var duree = 1200, debut = null;
+      function pas(t){
+        if(debut === null) debut = t;
+        var p = Math.min((t - debut) / duree, 1);
+        var e = 1 - Math.pow(1 - p, 3);
+        var v = Math.round(fin * e);
+        el.textContent = sep ? espaces(v) : v;
+        if(p < 1) requestAnimationFrame(pas);
+      }
+      requestAnimationFrame(pas);
+    }
+    function lancerCompteurs(el){
+      if(!el.querySelectorAll) return;
+      Array.prototype.forEach.call(el.querySelectorAll('.compteur'), compter);
+    }
+
+    /* Révélation au scroll */
+    var aReveler = document.querySelectorAll('.reveal, .etapesContainer');
+
+    function reveler(el){
+      var delai = parseInt(el.getAttribute('data-delai') || '0', 10);
+      if(reduit) delai = 0;
+      el.style.transitionDelay = delai + 'ms';
+      el.className += ' vu';
+      setTimeout(function(){ el.style.transitionDelay = ''; }, delai + 900);
+      lancerCompteurs(el);
+    }
+
+    if(!('IntersectionObserver' in window) || reduit){
+      Array.prototype.forEach.call(aReveler, reveler);
+    } else {
+      var observateur = new IntersectionObserver(function(entrees){
+        entrees.forEach(function(e){
+          if(e.isIntersecting){
+            reveler(e.target);
+            observateur.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+      Array.prototype.forEach.call(aReveler, function(el){ observateur.observe(el); });
+    }
+
+    /* Barre de progression et bouton flottant */
+    var barre = document.getElementById('barreProgression');
+    var cta = document.getElementById('ctaFlottant');
+    var formulaire = document.getElementById('candidature');
+    var enAttente = false;
+
+    function surScroll(){
+      var haut = window.pageYOffset || document.documentElement.scrollTop;
+      var total = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
+      if(barre) barre.style.width = (total > 0 ? (haut / total) * 100 : 0) + '%';
+
+      if(cta && formulaire){
+        var formVisible = formulaire.getBoundingClientRect().top < window.innerHeight * 0.85;
+        var actif = haut > window.innerHeight * 0.6 && !formVisible;
+        if(actif && cta.className.indexOf('vu') < 0) cta.className += ' vu';
+        if(!actif) cta.className = cta.className.replace(/\s*vu/g, '');
+      }
+      enAttente = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!enAttente){ enAttente = true; requestAnimationFrame(surScroll); }
+    });
+    surScroll();
+
+    /* Défilement doux */
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="#"]'), function(lien){
+      lien.addEventListener('click', function(e){
+        var id = this.getAttribute('href').substring(1);
+        var cible = document.getElementById(id);
+        if(!cible) return;
+        e.preventDefault();
+        if(cible.scrollIntoView){
+          cible.scrollIntoView({ behavior: reduit ? 'auto' : 'smooth', block: 'start' });
+        }
+        setTimeout(function(){
+          var premier = document.getElementById('prenom');
+          if(premier && premier.focus) premier.focus({ preventScroll: true });
+        }, reduit ? 0 : 900);
+      });
+    });
+  })();
+
+  /* Validation du formulaire */
+  (function(){
+    var form=document.getElementById('formFranchise');
+    if(!form) return;
+    var zone=document.getElementById('zoneForm');
+    var erreurGlobale=document.getElementById('erreurGlobale');
+
+    Array.prototype.forEach.call(form.querySelectorAll('.choix'),function(groupe){
+      groupe.addEventListener('change',function(){
+        Array.prototype.forEach.call(groupe.querySelectorAll('label'),function(l){
+          var i=l.querySelector('input');
+          if(i){ l.className = i.checked ? 'actif' : ''; }
+        });
+      });
+    });
+
+    function bloc(el){
+      var n=el;
+      while(n && n!==form){ if(n.className && (' '+n.className+' ').indexOf(' champ ')>-1) return n; n=n.parentNode; }
+      return null;
+    }
+    function afficher(el,msg,secouer){
+      var c=bloc(el); if(!c) return;
+      var p=c.querySelector('.messageErreur');
+      if(msg){
+        if(c.className.indexOf('erreur')<0) c.className+=' erreur';
+        if(secouer){
+          c.className=c.className.replace(/\s*secoue/g,'');
+          void c.offsetWidth;
+          c.className+=' secoue';
+          setTimeout(function(){ c.className=c.className.replace(/\s*secoue/g,''); },450);
+        }
+      }
+      else { c.className=c.className.replace(/\s*erreur/g,''); }
+      if(p) p.textContent=msg||'';
+    }
+    function verifier(el){
+      var v=(el.value||'').replace(/^\s+|\s+$/g,'');
+      if(el.type==='checkbox') return el.checked?'':'Votre accord est nécessaire pour traiter la candidature.';
+      if(el.type==='radio'){
+        var g=form.querySelectorAll('input[name="'+el.name+'"]');
+        for(var i=0;i<g.length;i++) if(g[i].checked) return '';
+        return 'Sélectionnez une réponse.';
+      }
+      if(el.required && !v) return 'Ce champ est obligatoire.';
+      if(el.type==='email' && v && !/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v)) return 'Adresse email invalide, exemple : prenom@domaine.fr';
+      if(el.type==='tel' && v && v.replace(/[^0-9]/g,'').length<9) return 'Numéro trop court pour être rappelé.';
+      if(el.id==='departement' && v && !/^(0[1-9]|[1-8][0-9]|9[0-5]|2[ab]|97[1-6])$/i.test(v)) return 'Indiquez un numéro de département, exemple : 56';
+      if(el.id==='message' && v && v.length<40) return 'Encore un peu de contexte : 40 caractères minimum.';
+      return '';
+    }
+
+    form.addEventListener('change',function(e){
+      var t=e.target;
+      if(t.tagName==='INPUT'||t.tagName==='SELECT'||t.tagName==='TEXTAREA') afficher(t,verifier(t));
+    });
+    form.addEventListener('blur',function(e){
+      var t=e.target;
+      if((t.tagName==='INPUT'||t.tagName==='SELECT'||t.tagName==='TEXTAREA') && (t.required||t.value)) afficher(t,verifier(t));
+    },true);
+    form.addEventListener('input',function(e){
+      var c=bloc(e.target);
+      if(c && c.className.indexOf('erreur')>-1) afficher(e.target,verifier(e.target));
+    });
+
+    form.addEventListener('submit',function(e){
+      var premier=null, vus={};
+      Array.prototype.forEach.call(form.querySelectorAll('input,select,textarea'),function(el){
+        if(el.type==='radio'){ if(vus[el.name]) return; vus[el.name]=1; }
+        var msg=verifier(el);
+        afficher(el,msg);
+        if(msg && !premier) premier=el;
+      });
+
+      if(premier){
+        e.preventDefault();
+        erreurGlobale.textContent='Le formulaire n\u2019est pas complet : corrigez les champs signalés en rouge.';
+        afficher(premier,verifier(premier),true);
+        premier.focus();
+        if(premier.scrollIntoView) premier.scrollIntoView({block:'center',behavior:'smooth'});
+        return;
+      }
+      erreurGlobale.textContent='';
+
+      if(form.getAttribute('data-demo')==='true'){
+        e.preventDefault();
+        zone.className+=' envoye';
+        var conf=document.getElementById('confirmation');
+        requestAnimationFrame(function(){
+          requestAnimationFrame(function(){ conf.className+=' affiche'; });
+        });
+        conf.scrollIntoView({block:'center',behavior:'smooth'});
+      }
+    });
+  })();
+  </script>
+
+</body>
+</html>
