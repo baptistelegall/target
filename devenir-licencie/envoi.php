@@ -17,8 +17,8 @@ $DESTINATAIRE = 'matargetbrest@gmail.com';
 // domaine ma-target.fr. Depuis janvier 2024, IONOS refuse purement et
 // simplement les envois dont le From: est en @gmail.com ou tout autre domaine
 // extérieur au contrat ("Sender address is not allowed").
-$EXPEDITEUR      = 'site@ma-target.fr';
-$EXPEDITEUR_NOM  = 'Site Ma Target';
+$EXPEDITEUR      = 'contact@ma-target.fr';
+$EXPEDITEUR_NOM  = 'Contact Ma Target';
 
 // Page du formulaire (pour la redirection).
 $PAGE_RETOUR = 'index.html';
@@ -28,7 +28,7 @@ $ACCUSE_RECEPTION = true;
 
 // Copie de secours des candidatures sur le serveur (laisser vide pour désactiver).
 // Le dossier doit être inscriptible et, idéalement, hors racine web.
-$FICHIER_LOG = __DIR__ . '/candidatures.csv';
+$FICHIER_LOG = "";
 
 // Délai minimum entre l'affichage de la page et l'envoi (secondes). Anti-robot.
 $DELAI_MINIMUM = 3;
