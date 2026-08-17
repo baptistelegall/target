@@ -1,7 +1,7 @@
 <?php
 /**
- * Ma Target — traitement du formulaire « Devenir franchisé »
- * À déposer dans /devenir-franchise/envoi.php
+ * Ma Target — traitement du formulaire « Devenir licencié »
+ * À déposer dans /vannes/devenir-licencie/envoi.php
  *
  * Fonctionnement : reçoit le POST, valide, envoie le mail, puis redirige vers
  * index.html?envoi=ok (ou ?envoi=erreur). La page lit ce paramètre en JS et
@@ -13,8 +13,10 @@
 // Destinataire(s) des candidatures. Plusieurs adresses : séparer par une virgule.
 $DESTINATAIRE = 'matargetbrest@gmail.com';
 
-// Expéditeur technique. IMPORTANT : doit être une adresse du domaine ma-target.fr,
-// sinon les mails partent en spam (SPF/DKIM).
+// Expéditeur technique. OBLIGATOIRE chez IONOS : doit être une adresse du
+// domaine ma-target.fr. Depuis janvier 2024, IONOS refuse purement et
+// simplement les envois dont le From: est en @gmail.com ou tout autre domaine
+// extérieur au contrat ("Sender address is not allowed").
 $EXPEDITEUR      = 'site@ma-target.fr';
 $EXPEDITEUR_NOM  = 'Site Ma Target';
 
@@ -137,7 +139,7 @@ $libelleLocal = array(
     'non'        => 'Pas encore',
 );
 
-$corps  = "Nouvelle candidature de franchise reçue depuis le site.\r\n";
+$corps  = "Nouvelle candidature de licence reçue depuis le site.\r\n";
 $corps .= "----------------------------------------------------------\r\n\r\n";
 $corps .= "CANDIDAT\r\n";
 $corps .= "  Nom            : " . $donnees['prenom'] . " " . $donnees['nom'] . "\r\n";
@@ -159,7 +161,7 @@ $corps .= "  Origine        : " . ($donnees['source'] !== '' ? $donnees['source'
 $corps .= "  Consentement   : accordé le " . date('d/m/Y à H:i') . "\r\n";
 $corps .= "  Adresse IP     : " . (isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'inconnue') . "\r\n";
 
-$sujet = 'Candidature franchise - ' . $donnees['ville']
+$sujet = 'Candidature licence - ' . $donnees['ville']
        . ' (' . $donnees['departement'] . ') - '
        . $donnees['prenom'] . ' ' . $donnees['nom'];
 $sujet = propre_entete($sujet);
@@ -171,12 +173,13 @@ $entetes .= 'Content-Type: text/plain; charset=UTF-8' . "\r\n";
 $entetes .= 'Content-Transfer-Encoding: 8bit' . "\r\n";
 $entetes .= 'X-Mailer: PHP/' . phpversion();
 
+/* IONOS : ne pas passer de 5e paramètre à mail(), il est bloqué sur le
+   mutualisé. L'enveloppe est imposée par le serveur. */
 $envoye = @mail(
     $DESTINATAIRE,
     '=?UTF-8?B?' . base64_encode($sujet) . '?=',
     $corps,
-    $entetes,
-    '-f' . $EXPEDITEUR
+    $entetes
 );
 
 /* ===================== COPIE SUR LE SERVEUR ===================== */
@@ -208,7 +211,7 @@ if ($FICHIER_LOG !== '') {
 
 if ($ACCUSE_RECEPTION && $envoye) {
     $corpsAR  = "Bonjour " . $donnees['prenom'] . ",\r\n\r\n";
-    $corpsAR .= "Nous avons bien reçu votre candidature pour l'ouverture d'un Ma Target à "
+    $corpsAR .= "Nous avons bien reçu votre candidature pour l'ouverture d'un Ma Target sous licence à "
               . $donnees['ville'] . ".\r\n\r\n";
     $corpsAR .= "Un membre de l'équipe développement revient vers vous sous 10 jours ouvrés "
               . "au numéro que vous nous avez indiqué.\r\n\r\n";
@@ -224,8 +227,7 @@ if ($ACCUSE_RECEPTION && $envoye) {
         propre_entete($donnees['email']),
         '=?UTF-8?B?' . base64_encode('Votre candidature Ma Target') . '?=',
         $corpsAR,
-        $entetesAR,
-        '-f' . $EXPEDITEUR
+        $entetesAR
     );
 }
 
