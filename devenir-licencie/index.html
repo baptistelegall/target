@@ -9,12 +9,12 @@
 
   <script type="text/javascript">document.documentElement.className += ' js-anim';</script>
 
-  <link rel="stylesheet" href="https://ma-target.fr/public/fonts.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../public/fonts.css" type="text/css" charset="utf-8" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Mono&family=Teko:wght@300&family=Vidaloka&family=Yellowtail&family=PT+Sans+Caption&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-  <link rel="icon" type="image/png" href="https://ma-target.fr/public/img/commun/matargetLogo.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../public/img/commun/matargetLogo.png" sizes="32x32">
 
   <style>
   html { scroll-behavior: smooth }
@@ -894,10 +894,10 @@
 
   <div id="socialMedia">
     <div class="socialMediaAnimation">
-      <a href="https://ma-target.fr/" title="Choisir un bar">
+      <a href="../" title="Choisir un bar">
         <button class="socialMedia" id="location">
-          <img src="https://ma-target.fr/public/img/commun/location-white.png" width="35px" id="location1">
-          <img src="https://ma-target.fr/public/img/commun/location-black.png" width="35px" id="location2">
+          <img src="../public/img/commun/location-white.png" width="35px" id="location1">
+          <img src="../public/img/commun/location-black.png" width="35px" id="location2">
         </button>
       </a>
     </div>
@@ -950,7 +950,7 @@
         </div>
       </div>
       <div class="heroImage reveal droite">
-        <img src="https://ma-target.fr/public/img/vannes/slider/3.jpg" alt="Salle de jeu Ma Target">
+        <img src="../public/img/vannes/slider/3.jpg" alt="Salle de jeu Ma Target">
       </div>
     </div>
   </section>
@@ -1094,7 +1094,16 @@
         <p class="formDesc reveal" data-delai="100">Ces informations restent confidentielles et servent uniquement à étudier votre candidature.</p>
       </div>
 
-      <form id="formLicence" action="envoi.php" method="post" novalidate data-demo="true">
+      <form id="formLicence" action="envoi.php" method="post" novalidate>
+
+        <!-- Anti-spam. Le champ "site_web" est invisible pour un humain : s'il
+             arrive rempli, c'est un robot. "ts" est horodaté par le JS et
+             permet de rejeter les soumissions instantanées. Ne pas supprimer. -->
+        <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+          <label for="site_web">Site web</label>
+          <input type="text" id="site_web" name="site_web" tabindex="-1" autocomplete="off">
+        </div>
+        <input type="hidden" name="ts" id="ts" value="">
 
         <fieldset class="blocForm reveal">
           <legend>Vous</legend>
@@ -1263,7 +1272,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-  <script type="text/javascript" src="https://ma-target.fr/public/js/index.js"></script>
+  <script type="text/javascript" src="../public/js/index.js"></script>
 
   <script type="text/javascript">
   (function(){
@@ -1373,6 +1382,20 @@
     var zone=document.getElementById('zoneForm');
     var erreurGlobale=document.getElementById('erreurGlobale');
 
+    /* Horodatage : envoi.php rejette les soumissions de moins de 3 secondes. */
+    var ts=document.getElementById('ts');
+    if(ts) ts.value=String(Math.floor(new Date().getTime()/1000));
+
+    /* Retour de envoi.php : ?envoi=ok ou ?envoi=erreur */
+    var statut=(window.location.search.match(/[?&]envoi=([^&]+)/)||[])[1];
+    if(statut==='ok'){
+      zone.className+=' envoye';
+      document.getElementById('confirmation').scrollIntoView({block:'center'});
+    } else if(statut==='erreur'){
+      erreurGlobale.textContent='L\u2019envoi a \u00e9chou\u00e9. Merci de v\u00e9rifier vos informations et de r\u00e9essayer, ou de nous \u00e9crire directement \u00e0 contact@ma-target.fr.';
+      form.scrollIntoView({block:'start'});
+    }
+
     Array.prototype.forEach.call(form.querySelectorAll('.choix'),function(groupe){
       groupe.addEventListener('change',function(){
         Array.prototype.forEach.call(groupe.querySelectorAll('label'),function(l){
@@ -1449,12 +1472,8 @@
         return;
       }
       erreurGlobale.textContent='';
-
-      if(form.getAttribute('data-demo')==='true'){
-        e.preventDefault();
-        zone.className+=' envoye';
-        document.getElementById('confirmation').scrollIntoView({block:'center',behavior:'smooth'});
-      }
+      /* Pas de preventDefault ici : le formulaire part réellement vers
+         envoi.php, qui redirige ensuite avec ?envoi=ok ou ?envoi=erreur. */
     });
   })();
   </script>

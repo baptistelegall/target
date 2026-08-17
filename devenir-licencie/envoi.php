@@ -1,7 +1,7 @@
 <?php
 /**
  * Ma Target — traitement du formulaire « Devenir licencié »
- * À déposer dans /vannes/devenir-licencie/envoi.php
+ * À déposer dans le dossier /devenir-licencie/, à côté de index.html
  *
  * Fonctionnement : reçoit le POST, valide, envoie le mail, puis redirige vers
  * index.html?envoi=ok (ou ?envoi=erreur). La page lit ce paramètre en JS et
@@ -11,24 +11,22 @@
 /* ===================== CONFIGURATION ===================== */
 
 // Destinataire(s) des candidatures. Plusieurs adresses : séparer par une virgule.
-$DESTINATAIRE = 'matargetbrest@gmail.com';
+// contact@ma-target.fr est en second destinataire pour garder un double : sans
+// copie sur le serveur, le mail est le seul exemplaire de la candidature.
+$DESTINATAIRE = 'legallbapt@gmail.com, contact@ma-target.fr';
 
 // Expéditeur technique. OBLIGATOIRE chez IONOS : doit être une adresse du
 // domaine ma-target.fr. Depuis janvier 2024, IONOS refuse purement et
 // simplement les envois dont le From: est en @gmail.com ou tout autre domaine
 // extérieur au contrat ("Sender address is not allowed").
 $EXPEDITEUR      = 'contact@ma-target.fr';
-$EXPEDITEUR_NOM  = 'Contact Ma Target';
+$EXPEDITEUR_NOM  = 'Site Ma Target';
 
 // Page du formulaire (pour la redirection).
 $PAGE_RETOUR = 'index.html';
 
 // Accusé de réception automatique au candidat.
 $ACCUSE_RECEPTION = true;
-
-// Copie de secours des candidatures sur le serveur (laisser vide pour désactiver).
-// Le dossier doit être inscriptible et, idéalement, hors racine web.
-$FICHIER_LOG = "";
 
 // Délai minimum entre l'affichage de la page et l'envoi (secondes). Anti-robot.
 $DELAI_MINIMUM = 3;
@@ -181,31 +179,6 @@ $envoye = @mail(
     $corps,
     $entetes
 );
-
-/* ===================== COPIE SUR LE SERVEUR ===================== */
-/* Filet de sécurité si l'envoi de mail échoue silencieusement. */
-
-if ($FICHIER_LOG !== '') {
-    $nouveau = !file_exists($FICHIER_LOG);
-    $fp = @fopen($FICHIER_LOG, 'a');
-    if ($fp) {
-        if ($nouveau) {
-            fwrite($fp, "\xEF\xBB\xBF"); // BOM UTF-8 pour Excel
-            fputcsv($fp, array('date','prenom','nom','email','telephone','ville',
-                               'departement','horizon','local','situation',
-                               'experience','apport','source','message','mail_envoye'), ';');
-        }
-        fputcsv($fp, array(
-            date('Y-m-d H:i:s'),
-            $donnees['prenom'], $donnees['nom'], $donnees['email'], $donnees['telephone'],
-            $donnees['ville'], $donnees['departement'], $donnees['horizon'], $donnees['local'],
-            $donnees['situation'], $donnees['experience'], $donnees['apport'], $donnees['source'],
-            $donnees['message'], $envoye ? 'oui' : 'non',
-        ), ';');
-        fclose($fp);
-        @chmod($FICHIER_LOG, 0640);
-    }
-}
 
 /* ===================== ACCUSÉ DE RÉCEPTION ===================== */
 
